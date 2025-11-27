@@ -2,15 +2,6 @@
 
 A React Native mobile application for managing patients and consultation notes, built with Expo and NativeWind (Tailwind CSS).
 
-## Screenshots
-
-The app implements the Figma design with the following features:
-
-- Patient listing with search and filter functionality
-- Expandable patient cards with contact information
-- Consultation notes bottom sheet
-- Bottom tab navigation
-
 ## How to Run
 
 ### Prerequisites
