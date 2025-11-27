@@ -67,24 +67,19 @@ export default function PatientsScreen() {
     [expandedPatientId, handlePatientPress, handleViewProfile, handleViewNotes]
   );
 
-  const ListHeader = () => (
-    <>
-      <View className="py-4">
-        <Text variant="h1" className="text-center">
-          Patients
-        </Text>
-      </View>
+  const ListHeader = useCallback(
+    () => (
+      <>
+        <View className="py-4">
+          <Text variant="h1" className="text-center">
+            Patients
+          </Text>
+        </View>
 
-      <TabFilter tabs={tabs} activeTab={activeTab} onTabChange={handleTabChange} />
-
-      <View className="py-4">
-        <SearchBar
-          value={searchQuery}
-          onChangeText={setSearchQuery}
-          placeholder="Search by patient"
-        />
-      </View>
-    </>
+        <TabFilter tabs={tabs} activeTab={activeTab} onTabChange={handleTabChange} />
+      </>
+    ),
+    [activeTab, handleTabChange]
   );
 
   const ListEmpty = () => {
@@ -110,6 +105,13 @@ export default function PatientsScreen() {
   return (
     <SafeAreaView className='flex-1 px-4 bg-background-gray' edges={['top']}>
       <ListHeader />
+      <View className="py-4">
+        <SearchBar
+          value={searchQuery}
+          onChangeText={setSearchQuery}
+          placeholder="Search by patient"
+        />
+      </View>
       <KeyboardAvoidingView
         style={{ flex: 1 }}
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
