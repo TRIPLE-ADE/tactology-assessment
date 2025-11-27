@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { cn } from '@/lib/utils';
 import { Text } from './text';
+import { COLORS } from '@/constants/colors';
 
 interface EmptyStateProps {
   title: string;
@@ -19,7 +20,7 @@ export const EmptyState: React.FC<EmptyStateProps> = ({
 }) => {
   return (
     <View className={cn('flex-1 items-center justify-center p-10', className)}>
-      <Ionicons name={icon} size={64} color="#9CA3AF" />
+      <Ionicons name={icon} size={64} color={COLORS.grayLight} />
       <Text variant="h2" className="mt-4 text-center">
         {title}
       </Text>

@@ -4,6 +4,7 @@ import { BottomSheetModal, BottomSheetBackdrop, BottomSheetFlatList } from '@gor
 import { Patient, ConsultationNote } from '@/types';
 import { Text } from '@/components/ui';
 import { ConsultationNoteCard } from './consultation-note-card';
+import { COLORS } from '@/constants/colors';
 
 interface ConsultationNotesSheetProps {
   patient: Patient | null;
@@ -52,8 +53,8 @@ export const ConsultationNotesSheet = forwardRef<BottomSheetModal, ConsultationN
 
     const ListHeaderComponent = useCallback(
       () => (
-        <View className="mb-2 items-center border-b border-border-light pb-4">
-          <Text variant="h2">Consultation notes</Text>
+        <View className="items-center pb-4">
+          <Text variant="h2" color="primary">Consultation notes</Text>
         </View>
       ),
       []
@@ -70,6 +71,7 @@ export const ConsultationNotesSheet = forwardRef<BottomSheetModal, ConsultationN
           paddingHorizontal: 24,
           paddingBottom: 40,
           flexGrow: 1,
+          gap: 16
         }}
         showsVerticalScrollIndicator={false}
       />
@@ -84,15 +86,17 @@ export const ConsultationNotesSheet = forwardRef<BottomSheetModal, ConsultationN
         backdropComponent={renderBackdrop}
         onDismiss={onClose}
         handleIndicatorStyle={{
-          backgroundColor: '#E5E7EB',
+          backgroundColor: `${COLORS.border}`,
           width: 40,
         }}
         backgroundStyle={{
           borderTopLeftRadius: 24,
           borderTopRightRadius: 24,
+          backgroundColor: `${COLORS.backgroundGray}`,
         }}
-        children={flatListContent}
-      />
+      >
+        {flatListContent}
+      </BottomSheetModal>
     );
   }
 );

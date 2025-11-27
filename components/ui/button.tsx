@@ -3,6 +3,7 @@ import { TouchableOpacity, ActivityIndicator } from 'react-native';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 import { Text } from './text';
+import { COLORS } from '@/constants/colors';
 
 const buttonVariants = cva('items-center justify-center rounded-full', {
   variants: {
@@ -52,7 +53,7 @@ export const Button: React.FC<ButtonProps> = ({
       activeOpacity={0.7}
       className={cn(buttonVariants({ variant, size }), disabled && 'opacity-50', className)}>
       {loading ? (
-        <ActivityIndicator size="small" color={variant === 'primary' ? '#FFFFFF' : '#14B8A6'} />
+        <ActivityIndicator size="small" color={variant === 'primary' ? `${COLORS.white}` : `${COLORS.primaryTeal}`} />
       ) : typeof children === 'string' ? (
         <Text variant="body" weight="medium" color={textColor}>
           {children}

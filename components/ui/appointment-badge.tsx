@@ -4,12 +4,14 @@ import { Ionicons } from '@expo/vector-icons';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 import { Text } from './text';
+import { CalendarIcon } from '@/assets/icons';
+import { COLORS } from '@/constants/colors';
 
 const badgeVariants = cva('rounded-lg px-3 py-2.5', {
   variants: {
     type: {
-      last: 'bg-border-light',
-      upcoming: 'bg-primary-light',
+      last: 'bg-gray',
+      upcoming: 'bg-gray',
     },
   },
   defaultVariants: {
@@ -29,15 +31,17 @@ export const AppointmentBadge: React.FC<AppointmentBadgeProps> = ({ type, date, 
 
   return (
     <View className={cn(badgeVariants({ type }), className)}>
-      <View className="mb-1 flex-row items-center">
-        {isUpcoming && (
-          <Ionicons name="time-outline" size={12} color="#14B8A6" style={{ marginRight: 4 }} />
+      <View className="flex-row items-center gap-1 mb-1">
+        {isUpcoming ? (
+          <Ionicons name="time-outline" size={16} color={COLORS.primary} />
+        ) : (
+          <CalendarIcon size={16} color={COLORS.info} />
         )}
-        <Text variant="label" color={isUpcoming ? 'teal' : 'muted'}>
+        <Text variant="label" color="muted">
           {isUpcoming ? 'Upcoming' : 'Last appointment'}
         </Text>
       </View>
-      <Text variant="body" weight="semibold" color="primary">
+      <Text variant="body" weight="medium" color="primary">
         {date}
       </Text>
     </View>

@@ -1,3 +1,4 @@
+export * from './CalendarIcon';
 export * from './HomeIcon';
 export * from './PatientsIcon';
 export * from './RecordsIcon';

@@ -13,6 +13,7 @@ import { usePatients, useRefresh } from '@/hooks';
 import { Text, SearchBar, TabFilter, LoadingState, ErrorState, EmptyState } from '@/components/ui';
 import { PatientCard, ConsultationNotesSheet } from '@/components/patients';
 import { Patient, PatientFilterTab } from '@/types';
+import { COLORS } from '@/constants/colors';
 
 const tabs: { key: PatientFilterTab; label: string }[] = [
   { key: 'all', label: 'All patients' },
@@ -107,7 +108,7 @@ export default function PatientsScreen() {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#FFFFFF' }} edges={['top']}>
+    <SafeAreaView className='flex-1 px-4 bg-background-gray' edges={['top']}>
       <ListHeader />
       <KeyboardAvoidingView
         style={{ flex: 1 }}
@@ -121,13 +122,13 @@ export default function PatientsScreen() {
           showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled"
           keyboardDismissMode="on-drag"
-          contentContainerStyle={{ paddingBottom: 20 }}
+          contentContainerStyle={{ paddingBottom: 20, gap: 16 }}
           refreshControl={
             <RefreshControl
               refreshing={refreshing}
               onRefresh={onRefresh}
-              tintColor="#14B8A6"
-              colors={['#14B8A6']}
+              tintColor={COLORS.primaryTeal}
+              colors={[COLORS.primaryTeal]}
             />
           }
         />

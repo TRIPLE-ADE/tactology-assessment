@@ -100,7 +100,7 @@ const mockPatients: Patient[] = [
       'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face',
     phone: '(555) 456-7890',
     email: 'theresa.webb@gmail.com',
-    status: 'past',
+    status: 'pending',
     lastAppointment: '01-10-2024',
     upcomingAppointment: null,
     consultationNotes: [
@@ -138,7 +138,7 @@ const mockPatients: Patient[] = [
       'https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=150&h=150&fit=crop&crop=face',
     phone: '(555) 678-9012',
     email: 'emily.davis@gmail.com',
-    status: 'past',
+    status: 'pending',
     lastAppointment: '15-09-2024',
     upcomingAppointment: null,
     consultationNotes: [

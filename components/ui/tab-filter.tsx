@@ -22,7 +22,7 @@ export function TabFilter<T extends string>({
   className,
 }: TabFilterProps<T>) {
   return (
-    <View className={cn('flex-row border-b border-border-light px-5', className)}>
+    <View className={cn('flex-row justify-between border-b border-border', className)}>
       {tabs.map((tab) => {
         const isActive = activeTab === tab.key;
         return (
@@ -36,8 +36,8 @@ export function TabFilter<T extends string>({
             )}>
             <Text
               variant="body"
-              weight={isActive ? 'medium' : 'normal'}
-              color={isActive ? 'teal' : 'muted'}>
+              weight="medium"
+              color={isActive ? 'teal' : 'secondary'}>
               {tab.label}
             </Text>
           </TouchableOpacity>

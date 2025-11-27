@@ -9,6 +9,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import { Patient } from '@/types';
 import { Text, Avatar, Button, AppointmentBadge, InfoRow } from '@/components/ui';
+import { COLORS } from '@/constants/colors';
 
 // Enable LayoutAnimation for Android
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
@@ -50,22 +51,22 @@ export const PatientCard: React.FC<PatientCardProps> = ({
   };
 
   return (
-    <View className="border-b border-border-light bg-white">
+    <View className="bg-white rounded-lg">
       <TouchableOpacity
         onPress={onPress}
         activeOpacity={0.7}
         className="flex-row items-center px-5 py-4">
         <Avatar src={patient.avatar} name={fullName} size="md" />
 
-        <View className="ml-3 flex-1">
-          <Text variant="h3">{fullName}</Text>
-          <Text variant="bodySmall" className="mt-0.5">
+        <View className="flex-1 ml-3">
+          <Text variant="h2">{fullName}</Text>
+          <Text variant="body" color="secondary" className="mt-0.5">
             {patient.gender} • Age:{patient.age}
           </Text>
         </View>
 
         <Animated.View style={chevronStyle}>
-          <Ionicons name="chevron-forward" size={20} color="#9CA3AF" />
+          <Ionicons name="chevron-forward" size={20} color={COLORS.grayLight} />
         </Animated.View>
       </TouchableOpacity>
 
@@ -73,18 +74,18 @@ export const PatientCard: React.FC<PatientCardProps> = ({
       {isExpanded && (
         <View className="px-5 pb-5">
           {/* Appointment Badges */}
-          <View className="mb-5 flex-row gap-3">
+          <View className="flex-row w-full gap-3 mb-5">
             {patient.lastAppointment && (
-              <AppointmentBadge type="last" date={patient.lastAppointment} />
+              <AppointmentBadge type="last" date={patient.lastAppointment} className="flex-1" />
             )}
             {patient.upcomingAppointment && (
-              <AppointmentBadge type="upcoming" date={patient.upcomingAppointment} />
+              <AppointmentBadge type="upcoming" date={patient.upcomingAppointment} className="flex-1" />
             )}
           </View>
 
           {/* Contact Information */}
           <View className="mb-4">
-            <Text variant="body" color="secondary" className="mb-3">
+            <Text variant="body" color="primary" className="mb-3">
               Contact Information
             </Text>
             <InfoRow icon="call-outline" value={patient.phone} />

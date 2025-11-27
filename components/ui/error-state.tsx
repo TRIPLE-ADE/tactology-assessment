@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { cn } from '@/lib/utils';
 import { Text } from './text';
 import { Button } from './button';
+import { COLORS } from '@/constants/colors';
 
 interface ErrorStateProps {
   message?: string;
@@ -18,7 +19,7 @@ export const ErrorState: React.FC<ErrorStateProps> = ({
 }) => {
   return (
     <View className={cn('flex-1 items-center justify-center p-10', className)}>
-      <Ionicons name="alert-circle-outline" size={64} color="#EF4444" />
+      <Ionicons name="alert-circle-outline" size={64} color={COLORS.error} />
       <Text variant="body" color="secondary" className="mt-4 text-center">
         {message}
       </Text>

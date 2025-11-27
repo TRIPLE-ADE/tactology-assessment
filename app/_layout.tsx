@@ -12,6 +12,7 @@ import {
   Poppins_600SemiBold,
   Poppins_700Bold,
 } from '@expo-google-fonts/poppins';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import '../app/global.css';
 
 SplashScreen.preventAutoHideAsync();
@@ -23,6 +24,7 @@ export default function RootLayout() {
     Poppins_500Medium,
     Poppins_600SemiBold,
     Poppins_700Bold,
+    ...Ionicons.font,
   });
 
   useEffect(() => {

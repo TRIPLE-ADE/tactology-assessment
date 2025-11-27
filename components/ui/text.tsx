@@ -11,8 +11,7 @@ const typographyVariants = cva('font-poppins', {
       h3: 'text-sm font-poppins-medium text-text-primary',
       body: 'text-sm font-poppins text-text-primary',
       bodySmall: 'text-[13px] font-poppins text-text-secondary',
-      caption: 'text-xs font-poppins text-text-muted',
-      label: 'text-[11px] font-poppins text-text-muted',
+      label: 'text-xs font-poppins text-text-muted',
     },
     weight: {
       light: 'font-poppins-light',

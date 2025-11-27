@@ -18,27 +18,28 @@ module.exports = {
       },
       colors: {
         primary: {
-          DEFAULT: '#14B8A6',
-          light: '#CCFBF1',
-          dark: '#0D9488',
+          DEFAULT: 'var(--color-primary)',
+          light: 'var(--color-primary-light)',
+          dark: 'var(--color-primary-dark)',
         },
-        // Background
-        background: '#FFFFFF',
-        // Text colors
+        background: {
+          DEFAULT: 'var(--color-background)',
+          gray: 'var(--color-background-gray)'
+        },
         text: {
-          primary: '#111827',
-          secondary: '#6B7280',
-          muted: '#9CA3AF',
+          primary: 'var(--color-text-primary)',
+          secondary: 'var(--color-text-secondary)',
+          muted: 'var(--color-text-muted)',
+          neutral: 'var(--color-text-neutral)'
         },
-        // Border
+        gray: 'var(--color-gray)',
         border: {
-          DEFAULT: '#E5E7EB',
-          light: '#F3F4F6',
+          DEFAULT: 'var(--color-border)',
+          light: 'var(--color-border-light)',
         },
-        // Status
-        success: '#10B981',
-        warning: '#F59E0B',
-        error: '#EF4444',
+        success: 'var(--color-success)',
+        warning: 'var(--color-warning)',
+        error: 'var(--color-error)',
       },
     },
   },
